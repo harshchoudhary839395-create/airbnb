@@ -21,6 +21,8 @@ app.use(userRouter);
 
 app.use(hostRouter);
 
+app.use(express.static(path.join(__dirname, './', 'public')))
+
 app.use((req, res, next) => {
     res.status(404).send("<h1> 404 YOUR PAGE IS NOT FOUND ON AIRBNB</h1>")
 });
